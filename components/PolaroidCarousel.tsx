@@ -1,3 +1,4 @@
+// components/PolaroidCarousel.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -11,21 +12,25 @@ interface PolaroidImage {
 interface PolaroidCarouselProps {
   images: PolaroidImage[];
   autoPlayInterval?: number;
+  isActive?: boolean;
 }
 
 export default function PolaroidCarousel({ 
   images, 
-  autoPlayInterval = 3000 
+  autoPlayInterval = 3000,
+  isActive = true
 }: PolaroidCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    if (!isActive) return;
+
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, autoPlayInterval);
 
     return () => clearInterval(interval);
-  }, [images.length, autoPlayInterval]);
+  }, [images.length, autoPlayInterval, isActive]);
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -57,6 +62,7 @@ export default function PolaroidCarousel({
       </div>
 
       {/* Carousel Indicators */}
+      {/*
       <div className="flex gap-2 mt-8">
         {images.map((_, index) => (
           <button
@@ -73,6 +79,7 @@ export default function PolaroidCarousel({
           />
         ))}
       </div>
+      */}
     </div>
   );
 }
