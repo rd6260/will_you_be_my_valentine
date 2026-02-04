@@ -14,7 +14,7 @@ export default function FlowerAnimation() {
   }, []);
 
   return (
-    <div className="relative min-h-screen w-full bg-black overflow-hidden flex items-end justify-center" style={{ perspective: '1000px' }}>
+    <div className="relative w-full bg-black overflow-hidden flex items-end justify-center" style={{height: '100dvh', perspective: '1000px' }}>
       {/* Night Background */}
       <div 
         className="fixed left-1/2 top-0 w-full h-full -translate-x-1/2"
