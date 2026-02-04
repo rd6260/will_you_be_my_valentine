@@ -1,5 +1,5 @@
 'use client';
-import Flower from '@/components/Flower02';
+import Flower02 from '@/components/Flower02';
 
 export default function Home() {
   return (

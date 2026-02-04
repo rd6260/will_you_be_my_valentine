@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-export default function FlowerAnimation() {
+export default function Flower02() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
